@@ -14,7 +14,7 @@ import React, {
   useEffect,
   useMemo,
   useRef,
-  useState,
+  useState
 } from 'react';
 import scrollIntoView from 'scroll-into-view-if-needed';
 import { SchedulerContext } from '../context';
@@ -26,12 +26,12 @@ import {
   DateRange,
   Grid,
   OnChangeCallback,
-  ScheduleType,
+  ScheduleType
 } from '../types';
 import { createGrid } from '../utils/createGrid';
 import {
   createMapCellInfoToRecurringTimeRange,
-  RecurringTimeRange,
+  RecurringTimeRange
 } from '../utils/createMapCellInfoToRecurringTimeRange';
 import { createMapDateRangeToCells } from '../utils/createMapDateRangeToCells';
 import { getEarliestTimeRange } from '../utils/getEarliestTimeRange';
@@ -132,8 +132,7 @@ export const TimeGridScheduler = React.memo(function TimeGridScheduler({
       const [first, ...rest] = cellInfoToDateRanges(cell);
       invariant(
         rest.length === 0,
-        `Expected "cellInfoToSingleDateRange" to return a single date range, found ${
-          rest.length
+        `Expected "cellInfoToSingleDateRange" to return a single date range, found ${rest.length
         } additional ranges instead. This is a bug in @remotelock/react-week-scheduler`,
       );
 
@@ -223,7 +222,7 @@ export const TimeGridScheduler = React.memo(function TimeGridScheduler({
       }
 
       if (hasFinishedDragging) {
-        onChange(mergeEvents(schedule, pendingCreation));
+        onChange(schedule, pendingCreation);
         setPendingCreation(null);
       }
     },
@@ -552,7 +551,7 @@ export const TimeGridScheduler = React.memo(function TimeGridScheduler({
                           onClick={handleCellClick(
                             dayIndex,
                             timeIndex *
-                              (numVerticalCells / numVisualVerticalCells),
+                            (numVerticalCells / numVisualVerticalCells),
                           )}
                           getDateRangeForVisualGrid={getDateRangeForVisualGrid}
                           key={timeIndex}
