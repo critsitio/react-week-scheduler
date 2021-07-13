@@ -1,6 +1,6 @@
 {
-  "name": "react-weekly-schedule",
-  "version": "0.0.0-development",
+  "name": "@critsitio/react-week-scheduler",
+  "version": "0.0.1",
   "license": "MIT",
   "description": "",
   "homepage": "https://github.com/SeanGroff/react-week-scheduler/",
